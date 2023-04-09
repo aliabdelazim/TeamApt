@@ -1,0 +1,131 @@
+
+<div class="h-screen">
+
+  <p-galleria [value]="images" [thumbnailsPosition]="'left'" class="h-10rem" [numVisible]="5">
+    <ng-template pTemplate="item" let-item>
+        <img [src]="item.itemImageSrc" style="width: 100%; min-height: 420px; display: block;" />
+    </ng-template>
+    <ng-template pTemplate="thumbnail" let-item>
+        <div class="grid grid-nogutter justify-content-center">
+            <img [src]="item.thumbnailImageSrc" />
+        </div>
+    </ng-template>
+  </p-galleria>
+
+
+
+  <div class="p-1">
+    <h5>Essentials men's short sleeves</h5>
+    <div class="flex flex-row justify-content-around">
+      <div class="flex">
+        <i class="pi pi-star mr-1 text-yellow-500"></i>
+        <small class="text-500 align-self-end">4.9 Rating</small>
+      </div>
+      <span class="text-500 font-bold">.</span>
+      <div class="flex">
+        <small class="text-500 align-self-end">2.3k+ Review</small>
+      </div>
+      <span class="text-500 font-bold">.</span>
+      <div class="flex">
+        <small class="text-500 align-self-end">2.9k+ Sold</small>
+      </div>
+    </div>
+  </div>
+  <p-tabView>
+    <p-tabPanel header="About Item" class="mb-5">
+      <div>
+        <div class="flex flex-row justify-content-between px-2">
+          <small><span class="text-400 pr-2">Brand:</span><span class="font-bold">ChampkpR</span></small>
+          <small><span class="text-400 pr-2">Color:</span><span class="font-bold">Aprikot</span></small>
+        </div>
+        <p-divider></p-divider>
+        <h5 class="mb-2">Description:</h5>
+        <ul class="px-4 mt-0">
+          <li>
+            <small class="text-500">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </small>
+          </li>
+          <li>
+            <small class="text-500">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </small>
+          </li>
+          <li>
+            <small class="text-500">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </small>
+          </li>
+          <li>
+            <small class="text-500">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </small>
+          </li>
+        </ul>
+        <p-divider></p-divider>
+        <div>
+          <h5 class="mb-2">Shipping Information:</h5>
+          <div class="px-1">
+            <small><span class="pr-2">Delivery:</span> <span class="font-bold">Shipping From Jakarta Indonesia</span></small><br>
+            <small><span class="pr-2">Shopping:</span><span class="font-bold">Free international shopping</span></small><br>
+            <small><span class="pr-2">Arrives:</span><span class="font-bold">Estimated Arrival on 25th Oct 2023</span></small>
+          </div>
+        </div>
+
+        <p-divider></p-divider>
+
+        <div>
+          <h5 class="mb-2">Review with images and videos:</h5>
+
+          <div class="flex justify-content-between">
+            <p-image width="50px" height="50px" [styleClass]="'border-round'" src="https://primefaces.org/cdn/primeng/images/galleria/galleria1.jpg" alt="Image" [preview]="true"></p-image>
+            <p-image width="50px" height="50px" src="https://primefaces.org/cdn/primeng/images/galleria/galleria1.jpg" alt="Image" [preview]="true"></p-image>
+            <p-image width="50px" height="50px" src="https://primefaces.org/cdn/primeng/images/galleria/galleria1.jpg" alt="Image" [preview]="true"></p-image>
+            <p-image width="50px" height="50px" src="https://primefaces.org/cdn/primeng/images/galleria/galleria1.jpg" alt="Image" [preview]="true"></p-image>
+          </div>
+        </div>
+
+        <p-divider></p-divider>
+
+        <div>
+          <h5 class="mb-2">Recommendations:</h5>
+          <div class="grid">
+            <div  *ngFor="let product of [1,2]; let i = index" class="col-6">
+              <app-product-card [routerLink]="'product-details/' + i" [image]="'assets/shirt-' + i + '.jpg'"></app-product-card>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="h-4rem"></div>
+    </p-tabPanel>
+    <p-tabPanel header="Reviews">
+
+        <form [formGroup]="formGroup">
+          <h5 class="text-center">We appreciate your feedback</h5>
+          <p-rating class="text-center" ></p-rating>
+        </form>
+
+        <div class="h-6rem"></div>
+    </p-tabPanel>
+
+  </p-tabView>
+
+  <p-sidebar [visible]="sideBarVisibility" [position]="'bottom'" [dismissible]="false" [showCloseIcon]="false"
+    [modal]="false">
+    <div class="flex flex-row justify-content-between py-2 px-3">
+      <div class="flex flex-column align-self-center">
+        <small>Total price</small>
+        <h4 class="m-0 text-teal-400">$18.00</h4>
+      </div>
+
+      <span class="p-buttonset align-self-center">
+        <button pButton type="button" label="1" icon="pi pi-shopping-bag"></button>
+        <button pButton type="button" label="Buy Now" class="p-button p-button-secondary"  ></button>
+      </span>
+    </div>
+
+  </p-sidebar>
+</div>
+

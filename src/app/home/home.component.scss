@@ -1,0 +1,16 @@
+.sheet {
+  background-image: url('/assets/main-page.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+}
+
+:host::ng-deep.p-carousel .p-carousel-indicators {
+  padding: .5rem;
+}
+:host::ng-deep.p-button {
+  font-size: .7rem;
+  padding: 0.55rem 1rem;
+}

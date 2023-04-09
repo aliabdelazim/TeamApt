@@ -1,0 +1,13 @@
+:host::ng-deep.p-card .p-card-content {
+  padding: 0px;
+}
+
+:host::ng-deep.p-card .p-card-title {
+  font-weight: 600;
+  color: rgb(172, 171, 171);
+  font-size: medium;
+}
+
+:host::ng-deep.p-card .p-card-body {
+  padding: .5rem;
+}
